@@ -29,23 +29,17 @@
       "name": "andrii",
       "description": "FE developer",
       "element": "fire"
-    },
-    {
-      "id": "c10c9582-5d53-4afd-b3e5-f02ed5377ec7",
-      "name": "andrii",
-      "description": "sdf",
-      "element": "water"
     }
   ],
   "filters": [
     {
       "name": "all",
-      "label": "Все",
+      "label": "Всі",
       "className": "btn-outline-dark"
     },
     {
       "name": "fire",
-      "label": "Огонь",
+      "label": "Вогонь",
       "className": "btn-danger"
     },
     {
@@ -55,7 +49,7 @@
     },
     {
       "name": "wind",
-      "label": "Ветер",
+      "label": "Вітер",
       "className": "btn-success"
     },
     {

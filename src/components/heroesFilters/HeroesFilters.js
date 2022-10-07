@@ -3,8 +3,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import classNames from "classnames";
 
-import {fetchFilters} from '../../actions';
-import { filterChanged } from "./filtersSlice";
+import { filterChanged, fetchFilters } from "./filtersSlice";
 import Spinner from '../spinner/Spinner';
 
 const HeroesFilters = () => {
@@ -52,7 +51,7 @@ const HeroesFilters = () => {
     return (
         <div className="card shadow-lg mt-4">
             <div className="card-body">
-                <p className="card-text">Отфильтруйте героев по элементам</p>
+                <p className="card-text">Відфільтруйте гороїв по елементах</p>
                 <div className="btn-group">
                     {elements}
                 </div>

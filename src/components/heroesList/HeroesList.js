@@ -2,10 +2,10 @@ import {useHttp} from '../../hooks/http.hook';
 import { useEffect, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import { createSelector } from 'reselect';
+import { createSelector } from '@reduxjs/toolkit';
 
-import { fetchHeroes } from '../../actions';
-import { heroDeleted } from './heroesSlice';
+import { heroDeleted, fetchHeroes } from './heroesSlice';
+
 import HeroesListItem from "../heroesListItem/HeroesListItem";
 import Spinner from '../spinner/Spinner';
 
@@ -25,20 +25,13 @@ const HeroesList = (props) => {
         }
     );
 
-    // const filteredHeroes = useSelector(state => {
-    //     if (state.filters.activeFilter === 'all') {
-    //         return state.heroes.heroes;
-    //     } else {
-    //         return state.heroes.heroes.filter(item => item.element === state.filters.activeFilter)
-    //     }
-    // });
     const filteredHeroes = useSelector(filteredHeroesSelector);
     const heroesLoadingStatus = useSelector(state => state.heroes.heroesLoadingStatus);
     const dispatch = useDispatch();
     const {request} = useHttp();
 
     useEffect(() => {
-        dispatch(fetchHeroes(request));
+        dispatch(fetchHeroes());
         // eslint-disable-next-line
     }, []);
 
@@ -53,7 +46,7 @@ const HeroesList = (props) => {
     if (heroesLoadingStatus === "loading") {
         return <Spinner/>;
     } else if (heroesLoadingStatus === "error") {
-        return <h5 className="text-center mt-5">Ошибка загрузки</h5>
+        return <h5 className="text-center mt-5">Помилка завантаження</h5>
     }
 
     const renderHeroesList = (arr) => {
@@ -62,7 +55,7 @@ const HeroesList = (props) => {
                 <CSSTransition
                     timeout={0}
                     classNames="hero">
-                    <h5 className="text-center mt-5">Героев пока нет</h5>
+                    <h5 className="text-center mt-5">Героїв поки-що немає</h5>
                 </CSSTransition>
             )
         }   
