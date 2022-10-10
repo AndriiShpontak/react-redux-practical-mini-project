@@ -25,34 +25,39 @@
       "element": "earth"
     },
     {
-      "id": "34022524-31d0-4b69-8443-6b29cddcd3b8",
-      "name": "andrii",
+      "id": "e067d94d-9d4f-431e-a699-031792cda75d",
+      "name": "Andrii",
       "description": "FE developer",
       "element": "fire"
     }
   ],
   "filters": [
     {
+      "id": "all",
       "name": "all",
       "label": "Всі",
       "className": "btn-outline-dark"
     },
     {
+      "id": "fire",
       "name": "fire",
       "label": "Вогонь",
       "className": "btn-danger"
     },
     {
+      "id": "water",
       "name": "water",
       "label": "Вода",
       "className": "btn-primary"
     },
     {
+      "id": "wind",
       "name": "wind",
       "label": "Вітер",
       "className": "btn-success"
     },
     {
+      "id": "earth",
       "name": "earth",
       "label": "Земля",
       "className": "btn-secondary"
